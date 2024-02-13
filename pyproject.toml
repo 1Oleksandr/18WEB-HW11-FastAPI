@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "hw11-fastapi"
+version = "0.1.0"
+description = ""
+authors = ["1Oleksandr <kondratiuk.ai@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.109.2"
+uvicorn = "^0.27.0.post1"
+requests = "^2.31.0"
+sqlalchemy = "^2.0.25"
+psycopg2-binary = "^2.9.9"
+python-multipart = "^0.0.7"
+alembic = "^1.13.1"
+asyncpg = "^0.29.0"
+email-validator = "^2.1.0.post1"
+pydantic = {extras = ["email"], version = "^2.6.1"}
+sqlalchemy-utils = "^0.41.1"
+phonenumbers = "^8.13.30"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
