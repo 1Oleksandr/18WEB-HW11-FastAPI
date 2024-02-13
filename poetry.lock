@@ -516,6 +516,21 @@ files = [
 ]
 
 [[package]]
+name = "postgres"
+version = "4.0"
+description = "postgres is a high-value abstraction over psycopg2."
+optional = false
+python-versions = "*"
+files = [
+    {file = "postgres-4.0-py2.py3-none-any.whl", hash = "sha256:d81f757acbde2ca12785b8a3d44c39f1e49782963e84eb67d3e029ad67d6b1d3"},
+    {file = "postgres-4.0.tar.gz", hash = "sha256:67c57de10c0d39cd5e3437eef7ac895b2b53747603b3edcd261dedec5ac04d4c"},
+]
+
+[package.dependencies]
+psycopg2-binary = ">=2.8"
+psycopg2-pool = "*"
+
+[[package]]
 name = "psycopg2-binary"
 version = "2.9.9"
 description = "psycopg2 - Python-PostgreSQL Database Adapter"
@@ -595,6 +610,20 @@ files = [
     {file = "psycopg2_binary-2.9.9-cp39-cp39-win32.whl", hash = "sha256:9dba73be7305b399924709b91682299794887cbbd88e38226ed9f6712eabee90"},
     {file = "psycopg2_binary-2.9.9-cp39-cp39-win_amd64.whl", hash = "sha256:f7ae5d65ccfbebdfa761585228eb4d0df3a8b15cfb53bd953e713e09fbb12957"},
 ]
+
+[[package]]
+name = "psycopg2-pool"
+version = "1.2"
+description = "Proper pooling of psycopg2 connections"
+optional = false
+python-versions = ">=3.3"
+files = [
+    {file = "psycopg2-pool-1.2.tar.gz", hash = "sha256:e9ec38d5af15b7cef5546452797935129c99482b25646f258a21786bfb826bf3"},
+    {file = "psycopg2_pool-1.2-py2.py3-none-any.whl", hash = "sha256:3c8251f6fac3145eb4c5bf3407bb61543dbbcbb8117af1341cd7a8b5468aedbb"},
+]
+
+[package.dependencies]
+psycopg2-binary = "*"
 
 [[package]]
 name = "pydantic"
@@ -935,4 +964,4 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "13c664204b83c74ae1ca2bb5d7005197924732e465e120407b0809d31083be1c"
+content-hash = "c82f29c04d4167d173240764e1c2160e233057cace0a22f85e1b22aee6d038eb"

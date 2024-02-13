@@ -13,10 +13,8 @@ class Contact(Base):
     name = Column(String(30), nullable=False)
     surname = Column(String(30), nullable=False)
     email = Column(EmailType, nullable=False, unique=True)
-    # phone: Optional[PhoneNumberType] = Field(None)
-    phone = Column(String(20))
+    phone = Column(String(12))
     birthday = Column(Date)
-    # Optional[Date] = None
     info = Column(String(200))
     created_at = Column('created_at', DateTime, default=func.now())
     
