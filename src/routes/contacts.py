@@ -39,10 +39,11 @@ async def get_contact_by_email(email: str = Query(), db: AsyncSession = Depends(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="NOT FOUND")
     return contact
 
+#  получаем список контактов, у которих дні рождения в бліжайшіе n дней от заданой дати
 @search_router.get("/birthday", response_model=list[ContactResponse])
-async def get_contact_by_birthday(birthday: date = Query(date.today()), db: AsyncSession = Depends(get_db)):
-    contacts = await repositories_contacts.get_contact_by_birthday(birthday, db)
-    if contacts is None:
+async def get_contact_by_birthday(birthday: date = Query(date.today()), n: int = 7, db: AsyncSession = Depends(get_db)):
+    contacts = await repositories_contacts.get_contact_by_birthday(birthday, n, db)
+    if contacts == []:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="There are no birthdays for the next 7 days")
     return contacts
 

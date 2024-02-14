@@ -1,8 +1,11 @@
 from typing import Optional
-from sqlalchemy import Column, Integer, String, func
+from sqlalchemy import Column, Integer, String, func, extract
+from sqlalchemy.orm import column_property
 from sqlalchemy.sql.sqltypes import Date, DateTime
+from datetime import datetime
 from sqlalchemy_utils import EmailType
-# , PhoneNumberType
+from sqlalchemy.ext.hybrid import hybrid_property
+# PhoneNumberType
 
 
 from src.database.db import Base
@@ -17,4 +20,5 @@ class Contact(Base):
     birthday = Column(Date)
     info = Column(String(200))
     created_at = Column('created_at', DateTime, default=func.now())
+    b_date = column_property(func.to_date(func.concat(datetime.today().year, '-', extract('month', birthday), '-', extract('day', birthday)), 'YYYY-MM-DD'))
     
